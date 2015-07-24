@@ -40,11 +40,11 @@ function frontier_prepare_delete_post($frontier_post_shortcode_parms = array())
 			if ( frontier_can_delete($thispost) == true )
 				{
 				
-				echo '<div id="frontier-post-alert">'.__("Delete", "frontier-post").':&nbsp;'.fp_get_posttype_label_singular($thispost->post_type).'</div>';
+				//echo '<div id="frontier-post-alert">'.__("Deletar", "frontier-post").':&nbsp;'.fp_get_posttype_label_singular($thispost->post_type).'</div>';  // alterado
+				echo '<strong>Deletar post '.$thispost->post_title.'?</strong>';
 				echo '<br><br>';
 				?>
 					<div class="frontier_post_delete_form"> 
-					<table>
 					
 					<form action="<?php echo $frontier_permalink; ?>" method="post" name="frontier_delete_post" id="frontier_delete_post" enctype="multipart/form-data" >
 						<input type="hidden" name="action" value="wpfrtp_delete_post"> 
@@ -52,36 +52,22 @@ function frontier_prepare_delete_post($frontier_post_shortcode_parms = array())
 						<input type="hidden" name="postid" id="postid" value="<?php if(isset($thispost->ID)) echo $thispost->ID; ?>">
 						<?php wp_nonce_field( 'frontier_delete_post', 'frontier_delete_post_'.$thispost->ID ); ?>
 		
-						<tr>
-						</tr><tr>
-						<td><center>
-						<button class="button" type="submit" name="submit_delete" 		id="submit_delete" 	value="deletego"><?php _e("Delete", "frontier-post"); ?></button>
-						<input type="reset" value=<?php _e("Cancel", "frontier-post"); ?>  name="cancel" id="cancel" onclick="location.href='<?php the_permalink();?>'">
-						</center>
-						</td></tr>
-					</form>	
-					</table>	
-					
+						
+						<button class="button frontier_button" type="submit" name="submit_delete" id="submit_delete" value="deletego"><?php _e("Deletar", "frontier-post"); ?></button>
+						<input type="reset" value=<?php _e("Cancelar", "frontier-post"); ?>  name="cancel" id="cancel" onclick="location.href='<?php the_permalink();?>'">
+					</form>					
 					<hr>
 					<?php 
-					echo "<table>";
-					echo "<tr>";
-					
-					
-					echo "<td><h1>".$thispost->post_title."</h1></td>"; 
-					
-					
-					
-					echo "</tr><tr><td>";
+			
+					echo '<strong>'.$thispost->post_title.'</strong><br/><br/>'; 
+
 					$content = $thispost->post_content;
 					//$content = apply_filters( 'the_content', $content);
 					$content = str_replace( ']]>', ']]&gt;', $content );
 					echo $content;
-					echo "</td>";
-					
+
 					// echo $thispost->post_content; 
-					
-					echo "</tr></table>";
+
 					?>
 					</div>
 					
