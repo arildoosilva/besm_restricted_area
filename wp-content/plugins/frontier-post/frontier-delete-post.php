@@ -41,7 +41,7 @@ function frontier_prepare_delete_post($frontier_post_shortcode_parms = array())
 				{
 				
 				//echo '<div id="frontier-post-alert">'.__("Deletar", "frontier-post").':&nbsp;'.fp_get_posttype_label_singular($thispost->post_type).'</div>';  // alterado
-				echo '<strong>Deletar post '.$thispost->post_title.'?</strong>';
+				echo '<strong>Tem certeza que quer deletar este post?</strong>';
 				echo '<br><br>';
 				?>
 					<div class="frontier_post_delete_form"> 
@@ -54,7 +54,7 @@ function frontier_prepare_delete_post($frontier_post_shortcode_parms = array())
 		
 						
 						<button class="button frontier_button" type="submit" name="submit_delete" id="submit_delete" value="deletego"><?php _e("Deletar", "frontier-post"); ?></button>
-						<input type="reset" value=<?php _e("Cancelar", "frontier-post"); ?>  name="cancel" id="cancel" onclick="location.href='<?php the_permalink();?>'">
+						<input class="frontier_button" type="reset" value=<?php _e("Cancelar", "frontier-post"); ?>  name="cancel" id="cancel" onclick="location.href='<?php the_permalink();?>'">
 					</form>					
 					<hr>
 					<?php 

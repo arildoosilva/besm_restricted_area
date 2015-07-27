@@ -20,9 +20,7 @@
         endif;
     // author's posts
     echo '<div class="author-postings">',
-         '<h3>'.get_the_author();
-         _e('&acute;s postings', 'wikiwp');
-    echo '</h3>',
+	 '<h3 class="usuario_h3">Posts do '.get_the_author().'</h3>',
          '<ul>'; 
     if ( have_posts() ) : while ( have_posts() ) : the_post();
     echo '<li>',
@@ -33,7 +31,7 @@
          // no posts by this autor so far 
          else:
     echo '<p>';
-    _e('No posts by this author.', 'wikiwp');
+    _e('Este usuário ainda não postou nada.', 'wikiwp');
     echo '</p>';
     endif;
     echo '</div>', // end of .author-postings
@@ -41,7 +39,7 @@
     // author list
     echo '<div class="author-list">',
          '<h2>';
-    _e('Our authors', 'wikiwp');
+    _e('Outros usuários', 'wikiwp');
     echo '</h2>',
          '<ul>';
          wp_list_authors('show_fullname=1&optioncount=1&orderby=post_count&order=DESC');

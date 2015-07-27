@@ -93,7 +93,7 @@
     
     .primary-menu-side .nav-menu-button {
         cursor: pointer;
-        display: none;
+        display: block;
         position: fixed;
         z-index: 10000;
         top: 0;

@@ -9,6 +9,7 @@
 		 '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes"/>';
 ?>
 <title>BESM | Wiki<?php // wp_title( '|', true, 'right' ); ?></title>
+
 <?php
     // Blog description
 	echo '<meta name="description" content="';
@@ -22,6 +23,10 @@
 		 '<link rel="pingback" href="'.get_bloginfo('pingback_url').'">';
 	// wp_head() function (see functions.php)
     wp_head();
+?>
+<script type="text/javascript" src="http://restrito.ccst.inpe.br/wp-content/themes/wikiwp/js/jquery.colorbox-min.js"></script>
+<link rel="stylesheet" href="http://restrito.ccst.inpe.br/wp-content/themes/wikiwp/css/colorbox.css">
+<?php
 	echo '</head>';
 
 	// HEADER
@@ -47,7 +52,7 @@
     if ( get_bloginfo( 'description' ) ) {
             echo '<span class="blog-description">'.get_bloginfo('description').'</span>';
         }
-    echo '<span class="blog-description"><a href="http://restrito.ccst.inpe.br/category/wiki/">Wiki</a></span>';
+    // echo '<span class="blog-description"><a href="http://restrito.ccst.inpe.br/category/wiki/">Wiki</a></span>';
     echo '</div>', // End of #logo
     '</div>', // End of .header-content
          '</header>',
@@ -75,9 +80,9 @@
 	if (is_user_logged_in()) {
 		// if ( current_user_can('edit_post', 123) ) {  // alterado
 		if ( current_user_can('publish_posts', 123) ) {
-				//echo '<a href="'.get_home_url().'/wp-admin/post-new.php" target="_self" class="add-post-link"><small><span class="add-post-link-plus">+</span><span class="add-post-link-text">&nbsp;';  // alterado
-				echo '<a href="http://restrito.ccst.inpe.br/adicionar/" target="_self" class="add-post-link"><small><span class="add-post-link-plus">+</span><span class="add-post-link-text">&nbsp;';
-		 	_e('Adicionar post', 'wikiwp');  // alterado
+				// echo '<a href="'.get_home_url().'/wp-admin/post-new.php" target="_self" class="add-post-link"><small><span class="add-post-link-plus">+</span><span class="add-post-link-text">&nbsp;';  // alterado
+				// echo '<a href="http://restrito.ccst.inpe.br/adicionar/" target="_self" class="add-post-link"><small><span class="add-post-link-plus">+</span><span class="add-post-link-text">&nbsp;';
+		 	// _e('Adicionar post', 'wikiwp');  // alterado
 			echo '</span></small></a>';
 		}
 	}

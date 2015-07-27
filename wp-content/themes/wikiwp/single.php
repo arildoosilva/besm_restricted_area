@@ -5,12 +5,13 @@
 	// Post
 	while ( have_posts() ) : the_post();
 	// Content
+	
 	echo '<div class="content post-content">';
 	echo '<h1 class="post-title">';
 		 the_title();
 	echo '</h1>';
 	the_content();
-	get_template_part('postinfo' );
+	// get_template_part('postinfo' );  // alterado
 	// Comments
 	comments_template();
 	endwhile;

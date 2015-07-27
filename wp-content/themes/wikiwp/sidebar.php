@@ -39,7 +39,7 @@
 		if (is_user_logged_in()) {
 			echo '<span class="postmeta-edit">';
 			//edit_post_link(__('Editar', 'wikiwp'));  // alterado
-			echo '<a class="post-edit-link" href="http://restrito.ccst.inpe.br/adicionar/?task=edit&postid='.get_the_ID().'">Editar</a>';
+			echo '<a class="post-edit-link" href="http://restrito.ccst.inpe.br/meus-posts/?task=edit&postid='.get_the_ID().'">Editar</a>';
 			echo '</span>';
 		}
 		// modified date
@@ -212,18 +212,19 @@
 		// edit
 		if (is_user_logged_in()) {
 			echo '<span class="postmeta-edit">';
-			edit_post_link(__('edit', 'wikiwp'));
+			// edit_post_link(__('edit', 'wikiwp'));  // alterado
+			echo '<a class="post-edit-link" href="http://restrito.ccst.inpe.br/meus-posts/?task=edit&postid='.get_the_ID().'">Editar</a>';
 			echo '</span>';
 		}
 		// date
 		echo '<div class="postmeta-section date"><strong>';
-		_e('Published', 'wikiwp');
+		_e('Publicado', 'wikiwp');
 		echo ':</strong>&nbsp;';
 		the_date();
 		echo '</div>',
 		// author
 		'<span class="postmeta-section author"><strong>';
-		_e('Author', 'wikiwp');
+		_e('Autor', 'wikiwp');
 		echo ':</strong>&nbsp;';
 		the_author_posts_link();
 		echo '</span>',		

@@ -7,16 +7,21 @@
     // Category name
          '<h1 class="cat-title">';
     if ( is_front_page() && is_home() ) {
-         _e('Welcome to', 'wikiwp');
-         echo '&nbsp;'.get_bloginfo('name');
+         _e('Bem-vindo', 'wikiwp');
+         // echo '&nbsp;'.get_bloginfo('name');
     } else {
         wp_title('');
     }
     echo '</h1>';
     // Blog description
     if ( is_front_page() && is_home() && get_bloginfo( 'description' ) ) {
-            echo '<p><small class="cat-title-description">'.get_bloginfo('description').'</small><p>';
+            // echo '<p><small class="cat-title-description">'.get_bloginfo('description').'</small><p>';
         }
+
+    // custom content
+
+    // end custom content
+
     // Post excerpt
     if ( have_posts() ) : while (have_posts()) : the_post();
     echo '<div class="excerpt clearfix">';

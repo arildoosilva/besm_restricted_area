@@ -3,10 +3,17 @@
     get_template_part('navigation');
     // content
     echo '<div class="content">',
-         '<div class="search-content">',
-         '<h1 class="cat-title">'.$wp_query->found_posts.'&nbsp;';
-    printf( __( 'results found for %s', 'wikiwp' ), '<strong>' . get_search_query() . '</strong>' );
+         '<div class="search-content">';
+if ($wp_query->found_posts == 0) {
+	echo '<h1 class="cat-title">Nenhum resultado encontrado para <strong>' . get_search_query() . '</strong></h1>';
+} elseif ($wp_query->found_posts == 1) {
+	echo '<h1 class="cat-title">1 resultado encontrado para <strong>' . get_search_query() . '</strong></h1>';
+} else {
+    echo '<h1 class="cat-title">'.$wp_query->found_posts.'&nbsp;';
+    printf( __( 'resultados encontrados para %s', 'wikiwp' ), '<strong>' . get_search_query() . '</strong>' );
     echo '</h1>';
+}
+
     $posts = query_posts($query_string . '&orderby=name&order=asc&posts_per_page=-1'); 
     
     // Post excerpt

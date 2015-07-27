@@ -12,7 +12,7 @@
 	the_title();
 	echo '</h1>';
 	the_content();
-	get_template_part('postinfo' );
+	// get_template_part('postinfo' );  // alterado
 	// Comments
 	comments_template();
 	endwhile;

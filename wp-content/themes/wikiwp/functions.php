@@ -85,6 +85,13 @@
 	}
 	add_action('wp_enqueue_scripts', 'wikiwp_load_wiki_styles');
 
+    // Loading stylesheet for colorbox
+    function wikiwp_load_colorbox() {
+        wp_register_style( 'wiki-style',
+        get_stylesheet_directory_uri().'/css/colorbox.css', array(), false, 'all' );
+        wp_enqueue_style( 'colorbox' );
+    }
+    add_action('wp_enqueue_scripts', 'wikiwp_load_colorbox');
 
     // Loading functions script
     function wikiwp_function_script() {
@@ -95,6 +102,16 @@
         );
     }
     add_action( 'wp_enqueue_scripts', 'wikiwp_function_script' );
+
+    // Loading functions script
+    function wikiwp_function_colorboxscript() {
+        wp_enqueue_script(
+            'functions-script',
+            get_stylesheet_directory_uri() . '/js/jquery.colorbox-min.js',
+            array( 'jquery' )
+        );
+    }
+    add_action( 'wp_enqueue_scripts', 'wikiwp_function_colorboxscript' );
 
 
     // Custom logo uploader
@@ -212,6 +229,6 @@
 	// Changing excerpt more
 	function wikiwp_excerpt_more($more) {
 	global $post;
-	return '... <a href="'. get_permalink($post->ID) . '">' . __('read more', 'wikiwp').' &raquo;</a>';
+	return '... <a href="'. get_permalink($post->ID) . '">' . __('leia mais', 'wikiwp').' &raquo;</a>';
 	}
 	add_filter('excerpt_more', 'wikiwp_excerpt_more');

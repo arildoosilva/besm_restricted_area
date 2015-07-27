@@ -2,6 +2,10 @@
  styling for Frontier Post
    ------------------   */
 
+.frontier_post_form {
+        font-family: "Linux Libertine",Georgia,Times,serif;
+}
+
 /* ############################################################ */
 
 .frontier-formtitle {
@@ -161,7 +165,7 @@ fieldset.frontier_post_fieldset legend {
   margin: 0;
   padding: 0;
   margin-left: 0px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   vertical-align: top !important;
 } 
 
@@ -180,13 +184,17 @@ fieldset.frontier_post_fieldset_tax  {
   margin: 5px !important;
   padding: 7px !important;
   float: left !important;
-  height: 200px !important;
+  height: 100% !important;
   min-width: 150px !important;
   text-align: left !important;
   overflow-y: scroll !important; 
-  
+ /* width: 48% !important;*/
   /*box-sizing: border-box*/
   
+}
+
+.frontier-post-taxonomies {
+        width: 100% !important;
 }
 
 legend.frontier_post_legend_tax {

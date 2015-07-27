@@ -8,18 +8,13 @@
     if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-mid') ) : endif;
     if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-right') ) : endif;
     // credits
-    echo '<div class="col-md-12 copyright">',
+    
          // '<p>',
 		 // '<strong>&copy;&nbsp;';
-	echo '&nbsp;<a href="'.esc_url( home_url() ).'">'.get_bloginfo('name').'</a></strong>',
-		 // '&nbsp;&nbsp;|&nbsp;&nbsp;',
-		 // 'powered by the&nbsp;',
-		 // '<a href="http://wikiwp.com" title="Wikipedia look-a-like theme for WordPress">WikiWP theme</a> and&nbsp;',
-		 // '<a href="http://wordpress.org/" target="_blank">WordPress</a>. &nbsp; | &nbsp; <a class="footer-rss-link" href="'.get_bloginfo('rss2_url').'" title="RSS Feed">RSS</a>',
-	     // '</p>',
-         '</div>',
-         '</div>', // End of .content
-		 '</footer>';
+	echo '</div></footer>';
  	wp_footer();
+
 	echo '</body></html>';
 ?>
+
+

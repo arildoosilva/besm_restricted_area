@@ -7,7 +7,7 @@
     }
     
     /* FONTS */
-    h1, h2 { font-family: 'Linux Libertine',Georgia,Times,serif; }
+    /*h1, h2 { font-family: 'Linux Libertine',Georgia,Times,serif; }*/
 
     h1 { font-size: 2em; }
 
@@ -310,7 +310,7 @@
 
 @media only screen and (min-width:768px){
     /* Fonts */
-    input { width: 60%; }
+    input[type=text] { width: 60%; }
     
     /* Header */    
     header.container-menu-side-open {

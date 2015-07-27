@@ -28,7 +28,7 @@ if ( strlen($frontier_edit_text_before) > 1 )
 	<div class="frontier-post-taxonomies">
 	<div class="frontier_no_border">
 	<fieldset id="frontier_post_fieldset_title" class="frontier_post_fieldset">
-		<legend><?php _e("Novo post", "frontier-post"); ?></legend>
+		<!--legend><?php _e("Novo post", "frontier-post"); ?></legend-->
 		<input class="frontier-formtitle"  placeholder="<?php _e('Digite o título aqui', 'frontier-post'); ?>" type="text" value="<?php if(!empty($thispost->post_title))echo $thispost->post_title;?>" name="user_post_title" id="fp_title" >			
 	</fieldset>
 	<fieldset id="frontier_post_fieldset_status" class="frontier_post_fieldset">
@@ -58,6 +58,7 @@ if ( strlen($frontier_edit_text_before) > 1 )
 		<?php
 		wp_editor($thispost->post_content, 'user_post_desc', frontier_post_wp_editor_args($editor_type, $frontier_media_button, $frontier_editor_height, false));
 		// printf( __( 'Word count: %s' ), '<span class="word-count">0</span>' );  // alterado
+		echo '<small>Você pode usar as seguintes tags HTML para formatar seu texto: &lt;a href="" title=""&gt; &lt;abbr title=""&gt; &lt;acronym title=""&gt; &lt;b&gt; &lt;blockquote cite=""&gt; &lt;cite&gt; &lt;code&gt; &lt;del datetime=""&gt; &lt;em&gt; &lt;i&gt; &lt;q cite=""&gt; &lt;s&gt; &lt;strike&gt; &lt;strong&gt;</small>';
 		?>
 		</div>
 	</fieldset>
