@@ -21,6 +21,7 @@
 ?>
 
 <!-- start of custom content -->
+<div class="excerpt noborderbottom">
     <strong>Experimentos ativos</strong><br/>
 <?php
     global $wpdb;
@@ -63,6 +64,7 @@
         echo '</div>';
     }
 ?>
+</div>
     <!-- end of custom content -->
 
 <script type="text/javascript">

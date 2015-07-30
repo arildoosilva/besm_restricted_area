@@ -24,6 +24,7 @@
 	// wp_head() function (see functions.php)
     wp_head();
 ?>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <script type="text/javascript" src="http://restrito.ccst.inpe.br/wp-content/themes/wikiwp/js/jquery.colorbox-min.js"></script>
 <link rel="stylesheet" href="http://restrito.ccst.inpe.br/wp-content/themes/wikiwp/css/colorbox.css">
 <?php

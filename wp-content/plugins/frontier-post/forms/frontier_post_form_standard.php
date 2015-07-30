@@ -86,7 +86,8 @@ if ( strlen($frontier_edit_text_before) > 1 )
 			// Cats_selected is set from script, but only for category
 			
 			echo '<fieldset class="frontier_post_fieldset_tax">';
-			echo '<legend class="frontier_post_legend_tax" >'.fp_get_tax_label($tmp_tax_name).'</legend>';
+			// echo '<legend class="frontier_post_legend_tax" >'.fp_get_tax_label($tmp_tax_name).'</legend>';  // alterado
+			echo '<legend class="frontier_post_legend_tax" >Categorias</legend>';
 			frontier_tax_input($thispost->ID, $tmp_tax_name, $tmp_tax_layout, $cats_selected, $frontier_post_shortcode_parms, $tax_form_lists[$tmp_tax_name]);
 			echo '</fieldset>';
 			echo PHP_EOL;

@@ -7,7 +7,7 @@
     // Category name
          '<h1 class="cat-title">';
     if ( is_front_page() && is_home() ) {
-         _e('Bem-vindo', 'wikiwp');
+         _e('Experimentos', 'wikiwp');
          // echo '&nbsp;'.get_bloginfo('name');
     } else {
         wp_title('');
@@ -18,14 +18,15 @@
             // echo '<p><small class="cat-title-description">'.get_bloginfo('description').'</small><p>';
         }
 
-    // custom content
+    get_template_part('inicio-page');
 
-    // end custom content
+//echo '<div>';  // div for using half of the screen
+
+    echo '<h1 class="cat-title new_posts_h1">Novos posts</h1>';
 
     // Post excerpt
     if ( have_posts() ) : while (have_posts()) : the_post();
     echo '<div class="excerpt clearfix">';
-         
     // Thumbnail
     if ( has_post_thumbnail() ) {
     echo '<a class="excerpt-thumbnail" href="';
@@ -54,7 +55,12 @@
     // Post info
     get_template_part('postinfo');
     echo '</div>'; // End of .excerpt
+
+
     endwhile;
+
+//echo '</div>';  // end of div for using half of the screen
+
 echo '</div>'; // End of .cat-content
     // Pargination
     echo '<div class="posts-pagination">'; 

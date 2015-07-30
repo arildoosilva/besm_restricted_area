@@ -362,7 +362,8 @@ Text Domain: wikiwp
     
 
     /* Excerpt */
-    .excerpt { margin-top: 60px; }
+    /*.excerpt { margin-top: 60px; }*/
+    .excerpt { margin-top: 30px; }
     
     .excerpt-thumbnail {
         box-sizing: border-box;
