@@ -2,10 +2,8 @@
     /*
     Template Name: Usuarios
     */
-
 	get_header();
 	get_template_part('navigation');
-
     // postmeta
 	get_template_part('postmeta' );
 	// POST
