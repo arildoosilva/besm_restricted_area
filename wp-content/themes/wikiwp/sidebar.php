@@ -18,17 +18,17 @@
 			// If no custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         } else {
             // If custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         }
 		// post title
@@ -133,17 +133,17 @@
 			// If no custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         } else {
             // If custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         }
 		// post title
@@ -196,17 +196,17 @@
 			// If no custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         } else {
             // If custom header image is set
             if ( has_post_thumbnail() ) {
                 $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
-                echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
-                the_post_thumbnail('medium-fix-width');
-                echo '</a>';
+                //echo '<a class="postmeta-thumbnail thumbnail-header-image" href="' . $large_image_url[0] . '" title="' . the_title_attribute('echo=0') . '" >',
+                //the_post_thumbnail('medium-fix-width');
+                //echo '</a>';
             }
         }
 		// edit

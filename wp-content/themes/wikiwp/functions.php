@@ -14,7 +14,7 @@
 
 		// Add thumbnail suport
 		if ( function_exists( 'add_theme_support' ) ) { 
-			// add_theme_support( 'post-thumbnails' );  // alterado
+			add_theme_support( 'post-thumbnails' );  // alterado
 			// default post thumbnail dimensions (cropped)
 			the_post_thumbnail( 'thumbnail' );       // Thumbnail (default 150px x 150px max)
 			the_post_thumbnail( 'medium' );          // Medium resolution (default 300px x 300px max)

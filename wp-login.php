@@ -545,7 +545,7 @@ case 'retrievepassword' :
 	 */
 	do_action( 'lost_password' );
 
-	login_header(__('Lost Password'), '<p class="message">' . __('Please enter your username or email address. You will receive a link to create a new password via email.') . '</p>', $errors);
+	login_header(__('Lost Password'), '<p class="message">' . __('Por favor, insira seu email ou nome de usuário. Você receberá um email com um link para criar uma nova senha.') . '</p>', $errors);
 
 	$user_login = isset($_POST['user_login']) ? wp_unslash($_POST['user_login']) : '';
 
@@ -616,7 +616,7 @@ case 'rp' :
 	$errors = new WP_Error();
 
 	if ( isset($_POST['pass1']) && $_POST['pass1'] != $_POST['pass2'] )
-		$errors->add( 'password_reset_mismatch', __( 'The passwords do not match.' ) );
+		$errors->add( 'password_reset_mismatch', __( 'As senhas não são iguais.' ) );
 
 	/**
 	 * Fires before the password reset procedure is validated.

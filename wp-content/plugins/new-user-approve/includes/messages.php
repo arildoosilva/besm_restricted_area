@@ -6,7 +6,7 @@
  * @return string
  */
 function nua_default_approve_user_message() {
-	$message = __( 'You have been approved to access {sitename}', 'new-user-approve' ) . "\r\n\r\n";
+	$message = __( 'Seu acesso ao site {sitename} foi aprovado', 'new-user-approve' ) . "\r\n\r\n";
 	$message .= "{username}\r\n";
 	$message .= "{password}\r\n\r\n";
 	$message .= "{login_url}";
@@ -22,7 +22,7 @@ function nua_default_approve_user_message() {
  * @return string
  */
 function nua_default_deny_user_message() {
-	$message = __( 'You have been denied access to {sitename}.', 'new-user-approve' );
+	$message = __( 'Seu acesso ao site {sitename} foi negado.', 'new-user-approve' );
 
 	$message = apply_filters( 'new_user_approve_deny_user_message_default', $message );
 
@@ -35,9 +35,9 @@ function nua_default_deny_user_message() {
  * @return string
  */
 function nua_default_registration_complete_message() {
-	$message = sprintf( __( 'An email has been sent to the site administrator. The administrator will review the information that has been submitted and either approve or deny your request.', 'new-user-approve' ) );
+	$message = sprintf( __( 'Um email foi enviado ao administrador do site. O administrador irá verificar as informações fornecidas e então aprovar ou negar seu cadastro.', 'new-user-approve' ) );
 	$message .= ' ';
-	$message .= sprintf( __( 'You will receive an email with instructions on what you will need to do next. Thanks for your patience.', 'new-user-approve' ) );
+	$message .= sprintf( __( 'Você receberá um email com instruções do que fazer em seguida.', 'new-user-approve' ) );
 
 	$message = apply_filters( 'new_user_approve_pending_message_default', $message );
 
@@ -50,7 +50,7 @@ function nua_default_registration_complete_message() {
  * @return string
  */
 function nua_default_welcome_message() {
-	$welcome = sprintf( __( 'Welcome to {sitename}. This site is accessible to approved users only. To be approved, you must first register.', 'new-user-approve' ), get_option( 'blogname' ) );
+	$welcome = sprintf( __( 'A Área Restrita do BESM só é acessível para os usuários cadastrados.', 'new-user-approve' ), get_option( 'blogname' ) );
 
 	$welcome = apply_filters( 'new_user_approve_welcome_message_default', $welcome );
 
@@ -63,9 +63,9 @@ function nua_default_welcome_message() {
  * @return string
  */
 function nua_default_notification_message() {
-	$message = __( '{username} ({user_email}) has requested a username at {sitename}', 'new-user-approve' ) . "\n\n";
+	$message = __( '{username} ({user_email}) fez o pedido de cadastro no {sitename}', 'new-user-approve' ) . "\n\n";
 	$message .= "{site_url}\n\n";
-	$message .= __( 'To approve or deny this user access to {sitename} go to', 'new-user-approve' ) . "\n\n";
+	$message .= __( 'Para aprovar ou negar o acesso ao {sitename} vá para', 'new-user-approve' ) . "\n\n";
 	$message .= "{admin_approve_url}\n\n";
 
 	$message = apply_filters( 'new_user_approve_notification_message_default', $message );
@@ -80,7 +80,7 @@ function nua_default_notification_message() {
  * @return string
  */
 function nua_default_registration_message() {
-	$message = __( 'After you register, your request will be sent to the site administrator for approval. You will then receive an email with further instructions.', 'new-user-approve' );
+	$message = __( 'Após o seu registro, o seu pedido será enviado ao administrador para aprovação. Você receberá um email com as instruções do que fazer em seguida.', 'new-user-approve' );
 
 	$message = apply_filters( 'new_user_approve_registration_message_default', $message );
 
