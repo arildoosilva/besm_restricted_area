@@ -15,8 +15,21 @@
 	// end of experimentos
 
 	// tarefas
+	echo '<div class="tarefas-docs">';
+	echo '<div class="half tarefas">';
 	echo '<h1 class="cat-title new_posts_h1">Tarefas do bimestre</h1>';
 	echo do_shortcode('[wp-trello type="cards" id="55b7ca73e2f2da5df492fa36" link="yes"]');
 	echo '<small><a href="http://restrito.ccst.inpe.br/tarefas/" class="link_right">Mais informações aqui</a></small>';
+	echo '</div>';
 	// end of tarefas
+
+	// documentos
+	echo '<div class="half docs">';
+	echo '<h1 class="cat-title new_posts_h1">Documentações</h1>';
+
+	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('widget_docs') ) : endif;
+
+	echo '</div>';
+	echo '</div>';
+	// end of documentos
 ?>

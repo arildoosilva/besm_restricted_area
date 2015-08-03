@@ -2,7 +2,6 @@
 	// set content width for embedded media
 	if ( ! isset( $content_width ) ) { $content_width = 1024; /* pixels */ }
 
-
 	if ( ! function_exists( 'wikiwp_setup' ) ) :
 	// Sets up theme defaults and registers support for various WordPress features.
 	function wikiwp_setup() {
@@ -222,7 +221,19 @@
             'after_title' => '</h3>',
             ));
         }
+
+if ( function_exists('register_sidebar') ) {
+        register_sidebar(array(
+        'name' => 'Widget Docs',
+        'id' => 'widget_docs',
+        'description' => '',
+        'before_widget' => '<div class="widget_docs">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 style="display: none">',
+        'after_title' => '</h3>',
+        ));
     }
+}
 	add_action( 'widgets_init', 'wikiwp_register_sidebar_left' );
 	
 
