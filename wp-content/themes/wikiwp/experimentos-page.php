@@ -85,13 +85,10 @@
         var info_id = button_id.replace("expbutton", "expinfo");
         var myInfo = document.getElementById(info_id);
         var displaySetting = myInfo.style.display;
-        var myButton = document.getElementById(button_id);
         if (displaySetting == 'block') { 
             myInfo.style.display = 'none';
-            // myButton.innerHTML = '+ info';
         } else { 
             myInfo.style.display = 'block';
-            // myButton.innerHTML = '- info';
         }
     }
     jQuery(document).ready(function($) {

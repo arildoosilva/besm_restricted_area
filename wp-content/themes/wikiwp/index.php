@@ -41,6 +41,7 @@
         // Post info
              '<div class="postinfo postinfo-excerpt">',
 			 '<span>'.get_the_date().'</span>',
+			 '<span>'.the_category().'</span>',
 		   	 '</div>'; // End of .postinfo-excerpt
     } else {
         // Post title
@@ -48,6 +49,7 @@
         // Post info
              '<div class="postinfo postinfo-excerpt">',
 			 '<span>'.get_the_date().'</span>',
+			 '<span>'.the_category().'</span>',
 		   	 '</div>'; // End of .postinfo-excerpt
     }
     // Excerpt

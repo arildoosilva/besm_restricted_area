@@ -9,7 +9,7 @@
 		 '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=10.0, user-scalable=yes"/>';
 ?>
 <title>BESM | Wiki<?php // wp_title( '|', true, 'right' ); ?></title>
-
+<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
 <?php
     // Blog description
 	echo '<meta name="description" content="';
