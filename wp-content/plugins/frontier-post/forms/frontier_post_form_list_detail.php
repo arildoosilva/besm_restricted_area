@@ -31,7 +31,7 @@ if (frontier_can_add() && !fp_get_option_bool("fps_hide_add_on_list"))
 		
 	?>
 	<fieldset class="frontier-new-menu">
-		<a id="frontier-post-add-new-link" class="frontier_add_link" href='<?php echo frontier_post_add_link($tmp_p_id) ?>'><?php echo $tmp_add_text; ?></a>
+		<a id="frontier-post-add-new-link" class="frontier_add_link" href='http://restrito.ccst.inpe.br/meus-posts/?task=new'><?php echo $tmp_add_text; ?></a>
 	</fieldset>
 
 

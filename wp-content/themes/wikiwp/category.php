@@ -52,8 +52,8 @@
 echo '</div>'; // End of .cat-content
     // Pargination
     echo '<div class="posts-pagination">'; 
-    previous_posts_link('<span class="next-posts-link">&laquo; '.__('Newer Entries', 'wikiwp').'</span>');
-    next_posts_link('<span class="previous-posts-link">'.__('Older Entries', 'wikiwp').' &raquo;</span>');  
+    previous_posts_link('<span class="next-posts-link">&laquo; '.__('Novos posts', 'wikiwp').'</span>');
+    next_posts_link('<span class="previous-posts-link">'.__('Posts antigos', 'wikiwp').' &raquo;</span>');  
     else : 
     echo '</div>'; // End of .posts-pargination
     // If no posts were found

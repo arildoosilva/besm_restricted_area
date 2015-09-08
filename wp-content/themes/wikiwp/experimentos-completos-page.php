@@ -1,6 +1,6 @@
 <?php
     /*
-    Template Name: Experimentos
+    Template Name: Experimentos Completos
     */
 
 	get_header();
@@ -22,34 +22,35 @@
 
 <!-- start of custom content -->
 <div class="excerpt noborderbottom">
-    <strong>Experimentos ativos</strong><br/>
+
 <?php
     global $wpdb;
-    $experimentos_ativos = $wpdb->get_results("SELECT * FROM wp_experimentos WHERE status LIKE 'ativo_%';");
+    $experimentos_ativos = $wpdb->get_results("SELECT * FROM wp_experimentos WHERE status LIKE 'completo_%';");
     foreach($experimentos_ativos as $experimento){
         $atual = $experimento->ano_atual;
         $porcentagem = ($atual * 100) / $experimento->anos_total;
         $status = '';
 	$box = 'bluehover';
-        if ($experimento->status == 'ativo_erro') {
-            $status = 'orange';
+	if (strpos($experimento->status, 'erro') !== false) {
+	    $status = 'orange';
 	    $box = 'orangehover';
-        } elseif ($experimento->status == 'ativo_aborted') {
+	} elseif (strpos($experimento->status, 'aborted') !== false) {
             $status = 'red';
 	    $box = 'redhover';
         }
         echo '<div class="experiment_box '.$box.'">';
         echo '<div class="col">';
-        echo '<a class="tooltips" href="#">'.$experimento->nome_experimento.'<span>'.$experimento->ano_atual.' de '.$experimento->anos_total.' anos</span></a>';
+        echo $experimento->nome_experimento;
+	if (strpos($experimento->status, 'aborted')) {
+	    echo ' - abortado';
+	}
         echo '</div>';
         echo '<div class="col">';
         echo '<button onclick="toggleInfo(this.id)" class="experiment_button frontier_button" id="expbutton_'.$experimento->id_experimento.'">+ info</button>';
         echo '</div>';
-        echo '<div class="meter animate '.$status.'">';
-        echo '<span style="width: '.$porcentagem.'%"><span></span></span>';
-        echo '</div>';
+        
         echo '<div class="experiment_info" id="expinfo_'.$experimento->id_experimento.'">';
-	echo $experimento->ano_atual.' de '.$experimento->anos_total.' anos<br/>';
+	echo $experimento->anos_total.' anos<br/>';
         echo 'Total de erros: '.$experimento->total_erros.' <br/>';
         echo $experimento->readme;
         echo do_shortcode('[foldergallery folder="wp-content/uploads/experimentos/'.$experimento->id_experimento.'" title="'.$experimento->id_experimento.'"]');
@@ -57,19 +58,6 @@
         echo '</div>';
     }
 ?>
-    <br/>
-    <strong>Experimentos terminados recentemente</strong><br/>
-<?php
-    $experimentos_completos = $wpdb->get_results("SELECT * FROM wp_experimentos WHERE status LIKE 'completo_%' LIMIT 5;");
-    foreach($experimentos_completos as $experimento){
-        echo '<span class="circle '.$experimento->status.'"></span><button onclick="toggleInfoComplete(this.id)" class="experiment_button_complete" id="expbutton_'. $experimento->id_experimento .'">'.$experimento->nome_experimento.'</button><br/>';
-        echo '<div class="experiment_info" id="expinfo_'.$experimento->id_experimento.'">';
-        echo do_shortcode('[foldergallery folder="wp-content/uploads/experimentos/'.$experimento->id_experimento.'" title="'.$experimento->id_experimento.'"]');
-        echo '</div>';
-    }
-?>
-<br/>
-<a href="<?php get_home_url(); ?>/?p=420"><small>Ver todos experimentos completos</small></a>
 </div>
     <!-- end of custom content -->
 
@@ -87,16 +75,7 @@
             myButton.innerHTML = '- info';
         }
     }
-    function toggleInfoComplete(button_id) {
-        var info_id = button_id.replace("expbutton", "expinfo");
-        var myInfo = document.getElementById(info_id);
-        var displaySetting = myInfo.style.display;
-        if (displaySetting == 'block') { 
-            myInfo.style.display = 'none';
-        } else { 
-            myInfo.style.display = 'block';
-        }
-    }
+    
     jQuery(document).ready(function($) {
         jQuery('a.colorbox_exp_image').colorbox({
             scalePhotos:"true",
